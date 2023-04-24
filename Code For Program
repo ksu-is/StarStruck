@@ -1,0 +1,23 @@
+def zodiac(question):
+    user_input = input(question + ' ')
+    while user_input.lower() not in ['Y', 'N']:
+        print('Please answer with Y/N.')
+        user_input = input(question + ' ')
+        return user_input.lower() == 'yes'
+    
+    def zodiac_match(sign):
+        questions =  {
+        'aries': ['Do you enjoy being spontanious?', 'Do you consider yourself headstrong?', 'Are you a competative person?'],
+        'taurus': ['Do you value stability?', 'Are you loyal and dependable?', 'Do you consider yourself possesive?' ],
+        'gemini': ['Are you an opinionateed?', "Do you enjoy communication?" 'Do you sometimes get lost in your thoughts?'] ,
+        'cancer': ['Are you family-oriented?', "Are you emotional and sensative?", 'Do you get lost thinking about the past?'], 
+        'leo': ['Do you enjoy being the center of attention?', 'Do you consider yourself a leader?', "Are you prideful?"],
+        'virgo': ['Are you sometimes a perfectionist?', 'Are you organized?', 'Do you enjoy helping others?'],
+        'libra': ['Are you often in a relationship?', 'Do you tend to be the peacemaker in arguments?', 'Do others see you as a social butterfly?'],
+        'scorpio': ['Are you intense and passionate in love?', 'Do you go through periods of transformation?', 'Do you tend to get lost in your emotions?'],
+        'sagittarius':['Are you philosophical?', 'Do you enjoy traveling, mentally or physically?', 'Are you usually an optimistic person'],
+        'capricorn':['Are you ambitious?', 'Do you see yourself as disciplined?', "Are you big on structure and stability?"],
+        'aquarius':['Do you value individuality?', "Are you innovative?", 'Are you spontanious and rebellious?'],
+        'pisces':['Are you naturally intuative?', 'Do you consider yourself selfless?', 'Do you go through periods of moodiness?']
+        }
+
