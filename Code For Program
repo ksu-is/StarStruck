@@ -1,10 +1,19 @@
+#creating a function to ask the user
+
+def welcome():
+    user_name = input("What is your name?: ").capitalize()
+
+    if user_name.isalpha():
+        print('Hey', user_name, "! This is the zodiac guessing game. First we'll ask you a few questions to quess your zodiac sign, and then we'll ask the same questions to figure out your perfect match!")
+
+    else:
+        print("Please enter a name only using letters.")
+        user_name = input("What is your name?: ").capitalize()
+        
 def zodiac(question):
-    user_input = input(question + ' ')
-    while user_input.lower() not in ['Y', 'N']:
-        print('Please answer with Y/N.')
-        user_input = input(question + ' ')
-        return user_input.lower() == 'yes'
-    
+    answer = input(question + '')
+
+    # creating a function that asks the user questions regarding their zodiac
     def zodiac_match(sign):
         questions =  {
         'aries': ['Do you enjoy being spontanious?', 'Do you consider yourself headstrong?', 'Are you a competative person?'],
@@ -21,3 +30,4 @@ def zodiac(question):
         'pisces':['Are you naturally intuative?', 'Do you consider yourself selfless?', 'Do you go through periods of moodiness?']
         }
 
+zodiac
