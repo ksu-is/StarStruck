@@ -1,4 +1,6 @@
 #creating a function to ask the user
+zodiac_sign = ''
+user_name = input("What is your name?: ").capitalize()
 
 def welcome():
     user_name = input("What is your name?: ").capitalize()
@@ -10,24 +12,26 @@ def welcome():
         print("Please enter a name only using letters.")
         user_name = input("What is your name?: ").capitalize()
         
-def zodiac(question):
-    answer = input(question + '')
+# asking questions that will be used to guess the users zodiac
+q1 = input("Choose the word that describes you the best: Opinionated, Reserved, Philisophical")
+q2= input("Choose the word that resonate with you the most: Headstrong, Cautious, Ambitious ")
+q3 = input("When in a relationship, which of these do you value the most? Spontinuity, Stability, Passion  ")
+q4 = input("When in love, you would describe yourself as: Passionate, Rebellious, Sensative")
+q5 = input("You would rather: Be the center of attention or Help another person be the center of attention")
+q6 = input("Choose the activity you enjoy doing the most: Travelling, Writing, Working out")
+q7 = input("Others would describe you as: Selfish or Selfless")
+q8 = input("Which one are you more focused on? Family or Ambition")
+q9 = input("You would rather: Plan ahead or go with the flow")
+q10 = input("Which option do you prefer: Being social or Being alone")
+q11 = input("If two of your friends are arguing, you are most likely to: Pick a side, Play the peacemaker, Stay out of it")
+q12 = input("Choose the word that describes you the best: Discplined, Loyal, Helpful")
 
+if q1 == "Opinionated" and q2 == "Headstrong" and q3 == "Spontinuity" and q4 == "Passionate" and q5 == "Be the center of attention" and q6 == "Working out" and q7 == "Selfish" and q8 == "Ambition" and q9 == "Go with the flow" and q10 == "Being social" and q11 == "Pick a side" and q12 == "Loyal":
+    zodiac_sign = "Are you an Aries, Leo, or Sagittarius?"
+elif q1 == "Opinionated"  and q3 == "Spontinuity" and q4 == "Passionate" and q6 == "Writing" and q10 == "Being social" and q11 == "Pick a side" and q12 == "Helpful":
+    zodiac_sign = 'Are you a Gemini, Aquarius, or Libra?'
+elif q1 == "Reserved" and q2 == "Cautious" and q4 == "Passionate"  and q8 == "Family" and q10 == "Being alone":
+    zodiac_sign = "Are you a Scorpio, Cancer, or Picses?"
+    
     # creating a function that asks the user questions regarding their zodiac
-    def zodiac_match(sign):
-        questions =  {
-        'aries': ['Do you enjoy being spontanious?', 'Do you consider yourself headstrong?', 'Are you a competative person?'],
-        'taurus': ['Do you value stability?', 'Are you loyal and dependable?', 'Do you consider yourself possesive?' ],
-        'gemini': ['Are you an opinionateed?', "Do you enjoy communication?" 'Do you sometimes get lost in your thoughts?'] ,
-        'cancer': ['Are you family-oriented?', "Are you emotional and sensative?", 'Do you get lost thinking about the past?'], 
-        'leo': ['Do you enjoy being the center of attention?', 'Do you consider yourself a leader?', "Are you prideful?"],
-        'virgo': ['Are you sometimes a perfectionist?', 'Are you organized?', 'Do you enjoy helping others?'],
-        'libra': ['Are you often in a relationship?', 'Do you tend to be the peacemaker in arguments?', 'Do others see you as a social butterfly?'],
-        'scorpio': ['Are you intense and passionate in love?', 'Do you go through periods of transformation?', 'Do you tend to get lost in your emotions?'],
-        'sagittarius':['Are you philosophical?', 'Do you enjoy traveling, mentally or physically?', 'Are you usually an optimistic person'],
-        'capricorn':['Are you ambitious?', 'Do you see yourself as disciplined?', "Are you big on structure and stability?"],
-        'aquarius':['Do you value individuality?', "Are you innovative?", 'Are you spontanious and rebellious?'],
-        'pisces':['Are you naturally intuative?', 'Do you consider yourself selfless?', 'Do you go through periods of moodiness?']
-        }
-
-zodiac
+   
