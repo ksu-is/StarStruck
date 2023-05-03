@@ -1,37 +1,78 @@
-#creating a function to ask the user
-zodiac_sign = ''
-user_name = input("What is your name?: ").capitalize()
-
-def welcome():
+print("Let's guess your zodiac sign!\n")
+user_name = input("What is your name?: ")
+def welcome():  
     user_name = input("What is your name?: ").capitalize()
 
-    if user_name.isalpha():
-        print('Hey', user_name, "! This is the zodiac guessing game. First we'll ask you a few questions to quess your zodiac sign, and then we'll ask the same questions to figure out your perfect match!")
-
-    else:
+if user_name.isalpha():
+        print('Hey',user_name,"!", "This is the zodiac guessing game. First we'll ask you a few questions to quess your zodiac sign, and then we'll figure out your perfect match!")
+else:
         print("Please enter a name only using letters.")
         user_name = input("What is your name?: ").capitalize()
-        
-# asking questions that will be used to guess the users zodiac
-q1 = input("Choose the word that describes you the best: Opinionated, Reserved, Philisophical")
-q2= input("Choose the word that resonate with you the most: Headstrong, Cautious, Ambitious ")
-q3 = input("When in a relationship, which of these do you value the most? Spontinuity, Stability, Passion  ")
-q4 = input("When in love, you would describe yourself as: Passionate, Rebellious, Sensative")
-q5 = input("You would rather: Be the center of attention or Help another person be the center of attention")
-q6 = input("Choose the activity you enjoy doing the most: Travelling, Writing, Working out")
-q7 = input("Others would describe you as: Selfish or Selfless")
-q8 = input("Which one are you more focused on? Family or Ambition")
-q9 = input("You would rather: Plan ahead or go with the flow")
-q10 = input("Which option do you prefer: Being social or Being alone")
-q11 = input("If two of your friends are arguing, you are most likely to: Pick a side, Play the peacemaker, Stay out of it")
-q12 = input("Choose the word that describes you the best: Discplined, Loyal, Helpful")
 
-if q1 == "Opinionated" and q2 == "Headstrong" and q3 == "Spontinuity" and q4 == "Passionate" and q5 == "Be the center of attention" and q6 == "Working out" and q7 == "Selfish" and q8 == "Ambition" and q9 == "Go with the flow" and q10 == "Being social" and q11 == "Pick a side" and q12 == "Loyal":
-    zodiac_sign = "Are you an Aries, Leo, or Sagittarius?"
-elif q1 == "Opinionated"  and q3 == "Spontinuity" and q4 == "Passionate" and q6 == "Writing" and q10 == "Being social" and q11 == "Pick a side" and q12 == "Helpful":
-    zodiac_sign = 'Are you a Gemini, Aquarius, or Libra?'
-elif q1 == "Reserved" and q2 == "Cautious" and q4 == "Passionate"  and q8 == "Family" and q10 == "Being alone":
-    zodiac_sign = "Are you a Scorpio, Cancer, or Picses?"
+# list of zodiac signs and associated traits
+zodiac_signs = {
+    "Aquarius":    ["unconventional", "intellectual", "independent"],
+    "Pisces":      ["dreamy", "compassionate", "artistic"],
+    "Aries":       ["spontanious", "confident", "adventurous"],
+    "Taurus":      ["practical", "stubborn", "sensual"],
+    "Gemini":      ["curious", "opininated", "talkative"],
+    "Cancer":      ["emotional", "nurturing", "home-loving"],
+    "Leo":         ["dramatic", "headstrong", "charismatic"],
+    "Virgo":       ["analytical", "perfectionist", "helpful"],
+    "Libra":       ["diplomatic", "harmonious", "romantic"],
+    "Scorpio":     ["intense", "mysterious", "passionate"],
+    "Sagittarius": ["optimistic", "adventurous", "philosophical"],
+    "Capricorn":   ["ambitious", "disciplined", "practical"]
+}
+
+# ask questions that are loosely correlated with each zodiac sign's traits
+for sign, traits in zodiac_signs.items():
+    print(f"Does the following describe you: {traits}? (Yes/No)")
+    response = input().lower()
+    while response not in ['yes', 'no']:
+        response = input("Please enter 'yes' or 'no': ").lower()
+    if response == "yes":
+        # the user's responses match this zodiac sign's traits
+        print("\nIs  your zodiac sign :", sign)
+        break
+else:
+    # no zodiac signs matched the user's responses
+    print("\nI couldn't guess your zodiac sign. Sorry!")
+
     
-    # creating a function that asks the user questions regarding their zodiac
-   
+
+
+print("Now let's guess your perfect zodiac match!\n")
+
+# dictionary of zodiac sign compatibility
+zodiac_compatibility = {
+    "Aquarius": ["Gemini", "Libra", "Sagittarius", "Aries"],
+    "Pisces": ["Scorpio", "Cancer", "Capricorn", "Taurus"],
+    "Aries": ["Leo", "Sagittarius", "Aquarius", "Gemini"],
+    "Taurus": ["Virgo", "Capricorn", "Cancer", "Pisces"],
+    "Gemini": ["Libra", "Aquarius", "Leo", "Aries"],
+    "Cancer": ["Pisces", "Taurus", "Scorpio", "Virgo"],
+    "Leo": ["Sagittarius", "Aries", "Gemini", "Libra"],
+    "Virgo": ["Taurus", "Capricorn", "Cancer", "Scorpio"],
+    "Libra": ["Aquarius", "Gemini", "Leo", "Sagittarius"],
+    "Scorpio": ["Pisces", "Cancer", "Capricorn", "Virgo"],
+    "Sagittarius": ["Leo", "Aries", "Libra", "Aquarius"],
+    "Capricorn": ["Taurus", "Virgo", "Scorpio", "Pisces"]
+}
+
+
+
+# find the user's perfect zodiac match
+match = zodiac_compatibility[sign][0]
+
+# print the user's perfect match
+print(f"Your perfect zodiac match is {match}!\n")
+# ask the user if they would like to see additional matches
+response = input("Would you like to see additional matches? (yes/no) ")
+
+# if the user enters 'yes', print the additional matches
+if response.lower() == "yes":
+    additional_matches = zodiac_compatibility[sign][1:]
+    print("Additional matches:")
+    for match in additional_matches:
+        print(match)
