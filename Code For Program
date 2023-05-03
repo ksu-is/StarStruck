@@ -33,7 +33,7 @@ for sign, traits in zodiac_signs.items():
         response = input("Please enter 'yes' or 'no': ").lower()
     if response == "yes":
         # the user's responses match this zodiac sign's traits
-        print("\nIs  your zodiac sign :", sign)
+        print("\nYour zodiac sign is most likely:", sign)
         break
 else:
     # no zodiac signs matched the user's responses
@@ -42,7 +42,7 @@ else:
     
 
 
-print("Now let's guess your perfect zodiac match!\n")
+print("Now i'll guess your perfect zodiac match!\n")
 
 # dictionary of zodiac sign compatibility
 zodiac_compatibility = {
@@ -66,7 +66,7 @@ zodiac_compatibility = {
 match = zodiac_compatibility[sign][0]
 
 # print the user's perfect match
-print(f"Your perfect zodiac match is {match}!\n")
+print(f"Your perfect zodiac match is: {match}!\n")
 # ask the user if they would like to see additional matches
 response = input("Would you like to see additional matches? (yes/no) ")
 
@@ -76,3 +76,8 @@ if response.lower() == "yes":
     print("Additional matches:")
     for match in additional_matches:
         print(match)
+elif response.lower() == "no":
+    print('Thanks for checking out my code!')
+else: 
+    print('Invalid input')
+    response = input('Would you like to see additional matches? (yes/no) ')
